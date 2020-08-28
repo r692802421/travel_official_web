@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="download">
     <el-row type="flex" class="row-bg" justify="space-between">
       <el-col :span="3"
         ><div class="logoDiv">
           <img src="../../assets/image/download/logo2.png" alt="" /></div
       ></el-col>
-      <el-col :span="14"><div class="grid-content bg-purple"></div></el-col>
-      <el-col :span="6">
+      <el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
+      <el-col :span="8">
         <div class="myNav">
           <a href="#">下载</a>
           <a href="#">关于我们</a>
@@ -68,18 +68,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.download {
+  // padding: 0 180px;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 930px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../../assets/image/download/bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 .el-row {
-  padding: 0 500px 0 180px;
-  height: 60px;
-  line-height: 60px;
-  background: linear-gradient(
-    90deg,
-    rgba(120, 175, 243, 1),
-    rgba(25, 93, 229, 1)
-  );
+  padding: 0 300px;
+  height: 100px;
+  line-height: 100px;
+
   .logoDiv {
-    width: 68.9px;
-    height: 60px;
+    padding: 10px 0;
+    width: 90.9px;
+    height: 80px;
     img {
       width: 100%;
     }
@@ -104,31 +116,19 @@ export default {
   }
 }
 .content {
-  padding: 0 180px;
-  position: absolute;
+  padding: 50px 300px;
   width: 100%;
-  height: calc(100% - 60px);
-  top: 60px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   .container {
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: 100% 100%;
-    // position: absolute;
+    width: 100%;
+    // width: 900px;
     display: flex;
     justify-content: space-between;
-    // left: 50%;
-    // top: 50%;
-    // transform: translate(-50%, -50%);
+
     > div {
-      flex: 1;
+      // flex: 1;
     }
     .left {
+      width: 600px;
       padding-top: 200px;
       // padding-left: 40px;
       p {
@@ -136,7 +136,7 @@ export default {
         font-size: 30px;
         font-family: PingFang SC;
         font-weight: bold;
-        // color: white;
+        color: white;
         margin-bottom: 50px;
       }
       .ios,
@@ -151,9 +151,12 @@ export default {
       }
     }
     .right {
+      display: flex;
+      justify-content: flex-end;
       .phoneDiv {
+        width: 400px;
         img {
-          width: 60%;
+          width: 100%;
         }
       }
     }
