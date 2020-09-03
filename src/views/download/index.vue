@@ -1,10 +1,12 @@
 <template>
   <div class="download">
     <el-row type="flex" class="row-bg" justify="space-between">
-      <el-col :span="3"
-        ><div class="logoDiv">
-          <img src="../../assets/image/download/logo2.png" alt="" /></div
-      ></el-col>
+      <el-col :span="3">
+        <!-- <div class="logoDiv">
+          <img src="../../assets/image/download/logo2.png" alt="" />
+        </div> -->
+        <h2>萤 火 虫 游 迹</h2>
+      </el-col>
       <el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
       <el-col :span="8">
         <div class="myNav">
@@ -35,9 +37,30 @@
         </div>
         <div class="right">
           <div class="phoneDiv">
-            <img src="../../assets/image/download/phone2.png" alt="" />
+            <img src="../../assets/image/download/phone0.png" alt="" />
           </div>
         </div>
+      </div>
+      <div class="myfooter">
+        <ul>
+          <li v-for="item in list.configs" :key="item">
+            <el-divider direction="vertical"></el-divider>
+            <a :href="item.href" target="_blank">{{ item.text }}</a>
+          </li>
+        </ul>
+
+        <!-- <el-divider direction="vertical"></el-divider>
+        <span>关于我们</span>
+        <el-divider direction="vertical"></el-divider>
+        <span>隐私条款</span>
+        <el-divider direction="vertical"></el-divider>
+        <span>用户协议</span>
+        <el-divider direction="vertical"></el-divider>
+        <span>下载页</span> -->
+        <p>
+          粤ICP备19160780号
+          <a href="https://www.nuokwan.com/" target="_blank">©NuoKwan</a>
+        </p>
       </div>
     </main>
   </div>
@@ -46,15 +69,53 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      list: {
+        appBuilt: {
+          appBuild: 1,
+          appName: "游迹网",
+          content: "#项目核心功能上线",
+          createdAt: 1595774331,
+          download: "https://apple.store.com",
+          driver: "ios",
+          forcedUpdate: false,
+          id: "5f15d00177bd2344e474e349",
+          publishTime: 1595612392,
+          remark: "第一个ios版本",
+          version: "1.0.0"
+        },
+        configs: [
+          {
+            href: "https://api.word-server.com/app/contactUs",
+            text: "联系我们"
+          },
+          {
+            href: "https://api.word-server.com/app/about",
+            text: "关于我们"
+          },
+          {
+            href: "https://api.word-server.com/app/privacy",
+            text: "隐私条款"
+          },
+          {
+            href: "https://api.word-server.com/app/agreement",
+            text: "用户协议"
+          },
+          {
+            href: "https://apple.store.com",
+            text: "下载页"
+          }
+        ],
+        appCode: "HQrLOP",
+        email: "3562485439@qq.com",
+        QQ: "3562485439",
+        wechat: "dongfeng87315"
+      }
+    };
   },
   methods: {
     iosDown() {
-      this.$message({
-        type: "info",
-        duration: "500",
-        message: "官网正在维护,请稍后再试!"
-      });
+      window.open("https://apple.store.com", "blank");
     },
     apkDown() {
       this.$message({
@@ -88,6 +149,10 @@ export default {
   height: 100px;
   line-height: 100px;
 
+  h2 {
+    color: white;
+    font-size: 18px;
+  }
   .logoDiv {
     padding: 10px 0;
     width: 90.9px;
@@ -118,8 +183,11 @@ export default {
 .content {
   padding: 50px 300px;
   width: 100%;
+  // height: 700px;
+
   .container {
     width: 100%;
+    height: 720px;
     // width: 900px;
     display: flex;
     justify-content: space-between;
@@ -156,11 +224,26 @@ export default {
       .phoneDiv {
         width: 400px;
         img {
-          width: 100%;
+          width: 80%;
         }
       }
     }
   }
+  .myfooter {
+    ul {
+      margin-left: 20%;
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+
   // background-image: url("../../assets/image/login/bg1.png");
 }
 </style>
